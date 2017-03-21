@@ -1,0 +1,25 @@
+#!/usr/bin/env node
+
+
+const envName = process.env.NAME;
+if ( !envName ) {
+    throw new Error('没有数据库名称')
+}
+const database = envName.split('.');
+const mongodb = require('mongodb').MongoClient;
+const target = database[0].split(',');
+const newName = database[1].split(',');
+mongodb.connect(`mongodb://localhost:27017/${target[0]}`,(err,db) => {
+    const table = db.collection(target[1]);
+    let _data = null;
+    table.find().toArray().then( data => {
+        _data = data;
+        mongodb.connect(`mongodb://localhost:27017/${newName[0]}`,(err,newDb) => {
+            const newTable = newDb.collection(newName[1]);
+            newTable.insert(_data)
+            newDb.close();
+            db.close();
+        })
+    });
+
+})
