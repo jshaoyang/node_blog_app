@@ -4,7 +4,7 @@ var router = express.Router();
 
 /* GET index page. */
 router.get('/index', function(req, res, next) {
-    res.render('index', { title: 'Vue-router' });
+    res.render('index', { title: 'Vue-' });
 });
 router.get('/*', function(req, res, next) {
     res.redirect('/index')

@@ -1,0 +1,63 @@
+#!/usr/bin/env node
+
+var app = require('./app');
+var debug = require('debug')('vue-project:server');
+var http = require('http');
+var args = require('node-args');
+var tool = require('./../util/tool.js');
+var env = process.env;
+var port = tool.normalize( args.p || env.PORT || '3001');
+var logs = require('../util/log');
+var log = logs.getLogger('listenSuc');
+	app.set('port', port); // 设置应用端口
+
+/***
+
+  @创建http 服务器
+
+***/
+
+// 请求错误处理 函数
+function onError(error) {
+	if (error.syscall !== 'listen') {
+		throw error;
+	}
+
+	var bind = typeof port === 'string'
+	? 'Pipe ' + port
+	: 'Port ' + port;
+
+	switch (error.code) {
+	case 'EACCES':
+		console.error(bind + ' requires elevated privileges');
+		process.exit(1);
+		break;
+	case 'EADDRINUSE':
+		console.error(bind + ' is already in use');
+		process.exit(1);
+		break;
+	default:
+		throw error;
+	}
+}
+
+// 监听开始处理 函数
+function onListening() {
+	var addr = server.address();
+	var bind = typeof addr === 'string'
+	? 'pipe ' + addr
+	: 'port ' + addr.port;
+	debug('Listening on ' + bind);
+	log('Listening on ' + bind);
+}
+
+
+var server = http.createServer(app);
+
+	server.listen(port);
+
+	server.on('error', onError);
+
+	server.on('listening', onListening);
+
+module.exports = server;
