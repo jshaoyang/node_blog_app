@@ -6,6 +6,7 @@ var args = require('node-args');
 var tool = require('./../util/tool.js');
 var env = process.env;
 var port = tool.normalize( args.p || env.PORT || '3001');
+console.log(args.p)
 var logs = require('../util/logger');
 var logger = logs.getLogger('listen');
 	app.set('port', port); // 设置应用端口
