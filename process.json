@@ -1,0 +1,10 @@
+{
+	"apps":[{
+		"name": "blog_app",
+		"script": "bin/start",
+		"cwd":"./",
+		"watch": true,
+		"out_file":"./logs/pm2/pm2.log",
+		"log_date_format": "YYYY-MM-DD HH:mm Z"
+	}]
+}
