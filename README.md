@@ -1,11 +1,11 @@
 ## blog_app
-```1.博客服务端应用
+   1.博客服务端应用
 
-##使用开发语言node 
-```1.服务端框架express
-```2.进程管理器pm2 需要提前安装 npm install -g pm2
+## 使用开发语言node 
+   1.服务端框架express
+   2.进程管理器pm2 需要提前安装 npm install -g pm2
 ## 启动方式
-```1.npm start 默认开启进程监听
+   1.npm start 默认开启进程监听
 
 ## 跳转控制器在router下单独文件为单独控制器
 ```1.路由配置为config下router.js 哈希表存放即可 
