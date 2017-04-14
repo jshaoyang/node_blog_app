@@ -1,0 +1,17 @@
+[2017-04-14 14:20:59.811] [INFO] request - GET /index
+[2017-04-14 14:21:00.349] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 14:21:18.048] [INFO] request - GET /index
+[2017-04-14 14:22:35.914] [INFO] request - GET /index
+[2017-04-14 14:22:53.740] [INFO] request - GET /index
+[2017-04-14 14:22:54.204] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 14:26:48.167] [INFO] request - GET /index
+[2017-04-14 14:26:48.628] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 14:27:39.768] [INFO] request - GET /index
+[2017-04-14 14:27:40.233] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 14:28:15.301] [INFO] request - GET /index
+[2017-04-14 14:28:15.768] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 14:28:27.786] [INFO] request - GET /index
+[2017-04-14 14:28:28.252] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 14:29:06.696] [INFO] request - GET /index
+[2017-04-14 14:29:07.047] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 14:29:07.048] [INFO] request - /stylesheets/style.css 404 Not Found

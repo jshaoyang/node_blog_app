@@ -7,8 +7,8 @@ var args = require('node-args');
 var tool = require('./../util/tool.js');
 var env = process.env;
 var port = tool.normalize( args.p || env.PORT || '3001');
-var logs = require('../util/log');
-var log = logs.getLogger('listenSuc');
+var logs = require('../util/logger');
+var logger = logs.getLogger('listen');
 	app.set('port', port); // 设置应用端口
 
 /***
@@ -29,14 +29,17 @@ function onError(error) {
 
 	switch (error.code) {
 	case 'EACCES':
+		logger.info(bind + ' requires elevated privileges');
 		console.error(bind + ' requires elevated privileges');
 		process.exit(1);
 		break;
 	case 'EADDRINUSE':
+		logger.info(bind + ' is already in use');
 		console.error(bind + ' is already in use');
 		process.exit(1);
 		break;
 	default:
+		logger.info(error);
 		throw error;
 	}
 }
@@ -48,7 +51,7 @@ function onListening() {
 	? 'pipe ' + addr
 	: 'port ' + addr.port;
 	debug('Listening on ' + bind);
-	log('Listening on ' + bind);
+	logger.info('Listening on ' + bind);
 }
 
 

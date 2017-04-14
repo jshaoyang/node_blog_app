@@ -1,0 +1,27 @@
+{
+    "appenders":[
+        {
+            "type":"console",
+            "category":"console"
+        },
+        {
+            "type": "dateFile",
+            "filename":"./logs/network/listen.log",
+            "pattern":"-yyyy-MM",
+            "category":"listen",
+            "encoding":"utf-8"
+        },
+        {
+            "type": "dateFile",
+            "filename":"./logs/network/request.log",
+            "pattern":"-yyyy-MM",
+            "category":"request",
+            "encoding":"utf-8"
+        }
+    ],        
+    "replaceConsole": true,
+    "levels":{
+        "listen":"INFO",
+        "request":"INFO"
+    }
+}
