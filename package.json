@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "start": "pm2 start ./process.json",
+    "stop": "pm2 stop all",
     "reNameDb": "./util/dbRename"
   },
   "dependencies": {

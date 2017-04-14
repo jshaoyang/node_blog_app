@@ -1,17 +1,45 @@
-[2017-04-14 14:20:59.811] [INFO] request - GET /index
-[2017-04-14 14:21:00.349] [INFO] request - GET /stylesheets/style.css
-[2017-04-14 14:21:18.048] [INFO] request - GET /index
-[2017-04-14 14:22:35.914] [INFO] request - GET /index
-[2017-04-14 14:22:53.740] [INFO] request - GET /index
-[2017-04-14 14:22:54.204] [INFO] request - GET /stylesheets/style.css
-[2017-04-14 14:26:48.167] [INFO] request - GET /index
-[2017-04-14 14:26:48.628] [INFO] request - GET /stylesheets/style.css
-[2017-04-14 14:27:39.768] [INFO] request - GET /index
-[2017-04-14 14:27:40.233] [INFO] request - GET /stylesheets/style.css
-[2017-04-14 14:28:15.301] [INFO] request - GET /index
-[2017-04-14 14:28:15.768] [INFO] request - GET /stylesheets/style.css
-[2017-04-14 14:28:27.786] [INFO] request - GET /index
-[2017-04-14 14:28:28.252] [INFO] request - GET /stylesheets/style.css
-[2017-04-14 14:29:06.696] [INFO] request - GET /index
-[2017-04-14 14:29:07.047] [INFO] request - GET /stylesheets/style.css
-[2017-04-14 14:29:07.048] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:10:02.256] [INFO] request - GET /
+[2017-04-14 16:10:02.332] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:10:02.332] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:10:22.494] [INFO] request - GET /
+[2017-04-14 16:10:22.874] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:10:22.875] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:11:03.662] [INFO] request - GET /
+[2017-04-14 16:11:03.739] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:11:03.739] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:12:05.022] [INFO] request - GET /
+[2017-04-14 16:12:05.419] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:12:05.420] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:15:07.038] [INFO] request - GET /
+[2017-04-14 16:15:07.418] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:15:07.419] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:20:08.139] [INFO] request - GET /
+[2017-04-14 16:20:08.220] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:20:08.221] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:20:50.809] [INFO] request - GET /
+[2017-04-14 16:20:51.185] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:20:51.185] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:26:09.451] [INFO] request - GET /
+[2017-04-14 16:26:09.819] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:26:09.820] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:26:50.997] [INFO] request - GET /
+[2017-04-14 16:26:51.400] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:26:51.401] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:26:59.476] [INFO] request - GET /
+[2017-04-14 16:26:59.874] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:26:59.875] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:27:32.880] [INFO] request - GET /
+[2017-04-14 16:27:33.248] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:27:33.249] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:34:27.995] [INFO] request - GET /
+[2017-04-14 16:34:28.360] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:34:28.360] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:39:33.715] [INFO] request - GET /
+[2017-04-14 16:39:34.076] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:39:34.077] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:40:48.087] [INFO] request - GET /
+[2017-04-14 16:40:48.473] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:40:48.474] [INFO] request - /stylesheets/style.css 404 Not Found
+[2017-04-14 16:42:50.045] [INFO] request - GET /
+[2017-04-14 16:42:50.426] [INFO] request - GET /stylesheets/style.css
+[2017-04-14 16:42:50.427] [INFO] request - /stylesheets/style.css 404 Not Found

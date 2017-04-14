@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routerConf = require('./../config/router');
-var logs = require('../util/logger').getLogger('request');
+var logs = require('./../util/logger').getLogger('request');
 var app = express();
 // 视图引擎设置
 
@@ -22,7 +22,7 @@ app.use(function (req,res,next) {
 });
 var router = Object.keys(routerConf);
 router.forEach( function (path) {
- 	app.use( path , require('../routes/' + routerConf[path]));
+ 	app.use( path , require('./../routes/' + routerConf[path]));
 });
 
 // if 静态资源、控制器都没有、那么认为是没有文件 404 错误

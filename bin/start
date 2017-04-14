@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 var app = require('./app');
 var debug = require('debug')('vue-project:server');
 var http = require('http');
@@ -12,8 +11,7 @@ var logger = logs.getLogger('listen');
 	app.set('port', port); // 设置应用端口
 
 /***
-
-  @创建http 服务器
+@创建http 服务器
 
 ***/
 
@@ -51,13 +49,14 @@ function onListening() {
 	? 'pipe ' + addr
 	: 'port ' + addr.port;
 	debug('Listening on ' + bind);
-	logger.info('Listening on ' + bind);
 }
 
 
 var server = http.createServer(app);
 
-	server.listen(port);
+	server.listen(port,function (){
+		logger.info('Listening on ' + port);
+	});
 
 	server.on('error', onError);
 
