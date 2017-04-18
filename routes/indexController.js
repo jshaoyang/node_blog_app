@@ -1,9 +1,12 @@
 var express = require('express');
 var mongodb = require('mongodb').MongoClient;
+var tool = require('./../util/tool');
 var router = express.Router();
 
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'Vue-asdfasd' });
+    res.render('index', { title: 'Vue-asdfasd'},function (err , page) {
+        res.send(tool.tempPlace(page));
+    });
 });
 // router.post('/*', function(req, res, next) {
 //     mongodb.connect('mongodb://localhost:27017/blog',function (err,db) {

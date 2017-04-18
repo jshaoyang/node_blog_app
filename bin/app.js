@@ -1,3 +1,4 @@
+'use strict';
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -6,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routerConf = require('./../config/router');
 var logs = require('./../util/logger').getLogger('request');
+var multer = require('multer');
 var app = express();
 // 视图引擎设置
 
@@ -14,16 +16,26 @@ app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
+app.use(cookieParser('blog_app'));
+
+
+
 app.use(express.static(path.join(__dirname, './../public')));
 app.use(function (req,res,next) {
 	logs.info(req.method + ' ' + req.url);
 	next();
 });
+
 var router = Object.keys(routerConf);
 router.forEach( function (path) {
  	app.use( path , require('./../routes/' + routerConf[path]));
 });
+
+//设置上传文件目录
+//app.use(multer({dest:'./uploads/'}));
+var upload = require('./../upload/uploadFile.js');
+app.use( '/upload' , upload);
+
 
 // if 静态资源、控制器都没有、那么认为是没有文件 404 错误
 app.use(function(req, res, next) {
@@ -42,6 +54,8 @@ if (app.get('env') !== 'production') {
 		});
 	});
 }
+//赋值给 当前进程
+process.env.NODE_ENV = app.get('env');
 
 // 生产环境报错处理
 app.use(function(err, req, res, next) {

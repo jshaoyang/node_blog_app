@@ -1,16 +1,25 @@
 var mian = {};
+var env = process.env;
 mian.normalize = function normalizeNumber (val) {
-    var port = parseInt(val, 10);
+	var port = parseInt(val, 10);
 
-    if (!isNaN(port)) {
-        return port;
-    }
+	if (!isNaN(port)) {
+		return port;
+	}
 
-    if (port >= 0) {
-        return port;
-    }
+	if (port >= 0) {
+		return port;
+	}
 
-    return false;
-}
+	return false;
+};
+mian.tempPlace = function (template) {
+	var temp = '';
+	var site = 'http://onlyqing.cn:3001';
+	if ( env.NODE_ENV !== 'production' ) {
+		temp = template.match(/(\{=[^=}]+)/ig)[0].replace('{=','');
+		return template.replace( '{=' + temp + '=}' , site + temp );
+	}
+};
 
 module.exports = mian;
