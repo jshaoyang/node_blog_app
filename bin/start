@@ -5,7 +5,7 @@ var http = require('http');
 var args = require('node-args');
 var tool = require('./../util/tool.js');
 var env = process.env;
-var port = tool.normalize( args.p || env.PORT || '3001');
+var port = tool.normalize( env.PORT || '3000');
 var logs = require('../util/logger');
 var logger = logs.getLogger('listen');
 	app.set('port', port); // 设置应用端口 供全局使用
