@@ -15,7 +15,7 @@ mian.normalize = function normalizeNumber (val) {
 };
 mian.tempPlace = function (template) {
 	var temp = '';
-	var site = 'http://onlyqing.cn:3001';
+	var site = 'http://onlyqing.cn:8888';
 	if ( env.NODE_ENV !== 'production' ) {
 		temp = template.match(/(\{=[^=}]+)/ig)[0].replace('{=','');
 		return template.replace( '{=' + temp + '=}' , site + temp );

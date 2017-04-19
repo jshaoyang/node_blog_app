@@ -1,18 +1,21 @@
 var express = require('express');
-var formidable = require('formidable');
+var path = require('path');
 var router = express.Router();
+const fs = require("fs-extra");
+
+
 router.post('/',function (req , res , next) {
-    let file = req;
-    var form = new formidable.IncomingForm();
-    form.uploadDir = "./uploads/";
-    form.parse(req, function(err, fields, files) {
-      // res.writeHead(200, {'content-type': 'text/plain'});
-      // res.write('received upload:\n\n');
-     console.log(fields,files);
-      res.send(200,false,'上传成功');
-    });
-    // console.log(file);
-    // res.send(200,false,'上传成功');
+	var _path = './public' + req.headers.to + '/';
+	fs.outputFileSync(_path);
+	var writeStream = fs.createWriteStream( _path + req.headers.filename );
+	req.on('data', function(data) {
+		writeStream.write(data);
+	});
+	req.on('end', function() {
+		writeStream.end();
+		res.statusCode = 200;
+		res.end("OK");
+	});
 });
 
 module.exports = router;
