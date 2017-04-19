@@ -31,12 +31,6 @@ router.forEach( function (path) {
  	app.use( path , require('./../routes/' + routerConf[path]));
 });
 
-//设置上传文件目录
-//app.use(multer({dest:'./uploads/'}));
-var upload = require('./../upload/uploadFile.js');
-app.use( '/upload' , upload);
-
-
 // if 静态资源、控制器都没有、那么认为是没有文件 404 错误
 app.use(function(req, res, next) {
 	logs.info(req.url + ' 404 Not Found');

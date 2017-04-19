@@ -1,6 +1,7 @@
 var router = {
     "/" : 'indexController',
     "/index" : 'indexController',
-    "/user" : 'userController'
+    "/user" : 'userController',
+    "/upload" : 'uploadController'
 };
 module.exports = router;
