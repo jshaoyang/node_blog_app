@@ -7,7 +7,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routerConf = require('./../config/router');
 var logs = require('./../util/logger').getLogger('request');
-var multer = require('multer');
 var app = express();
 // 视图引擎设置
 
