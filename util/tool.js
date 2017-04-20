@@ -1,5 +1,8 @@
 var mian = {};
 var env = process.env;
+var conf = require('./../config/app.conf');
+var map = require('./../config/version/v'+ conf.produc_version );
+
 mian.normalize = function normalizeNumber (val) {
 	var port = parseInt(val, 10);
 
@@ -15,11 +18,13 @@ mian.normalize = function normalizeNumber (val) {
 };
 mian.tempPlace = function (template) {
 	var temp = '';
-	var site = 'http://onlyqing.cn:8888';
+	var site = conf.develop_site;
 	if ( env.NODE_ENV !== 'production' ) {
 		temp = template.match(/(\{=[^=}]+)/ig)[0].replace('{=','');
 		return template.replace( '{=' + temp + '=}' , site + temp );
+	}else{
+		temp = template.match(/(\{=[^=}]+)/ig)[0].replace('{=','');
+		return template.replace( '{=' + temp + '=}' , map[temp] );
 	}
 };
-
 module.exports = mian;

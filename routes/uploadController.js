@@ -34,4 +34,20 @@ router.post('/',function (req , res , next) {
 	});
 });
 
+// 上传配置文件
+router.post('/config',function (req , res , next) {
+	var file =  './config/version/' + req.headers.filename;
+	var writeStream = fs.createWriteStream( file );
+	req.on('data', function(data) {
+		writeStream.write(data);
+	});
+
+	req.on('end', function() {
+		writeStream.end();
+		res.statusCode = 200;
+		res.end('上传完成');
+		logs.info( file + '  上传完成');
+	});
+});
+
 module.exports = router;
