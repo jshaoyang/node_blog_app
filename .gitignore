@@ -8,3 +8,4 @@ npm-debug.log
 /logs
 /public
 /config/version
+/config/app.conf.json

@@ -1,4 +1,5 @@
 var mian = {};
+var fs = require('fs');
 var env = process.env;
 var conf = require('./../config/app.conf');
 
@@ -22,7 +23,13 @@ mian.tempPlace = function (template) {
 		temp = template.match(/(\{=[^=}]+)/ig)[0].replace('{=','');
 		return template.replace( '{=' + temp + '=}' , site + temp );
 	}else{
-		var map = require('./../config/version/v'+ conf.produc_version );
+		var exists = fs.existsSync('./config/version/v' + conf.produc_version + '.json');
+		if ( !exists ) {
+			console.log('map 文件不存在');
+			process.exit(1);
+		}
+		var map = fs.readFileSync('./config/version/v'+ conf.produc_version + '.json').toString();
+			map = JSON.parse(map);
 		temp = template.match(/(\{=[^=}]+)/ig)[0].replace('{=','');
 		return template.replace( '{=' + temp + '=}' , map[temp] );
 	}
