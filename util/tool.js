@@ -17,8 +17,8 @@ mian.normalize = function normalizeNumber (val) {
 };
 mian.tempPlace = function (template) {
 	var temp = '';
-	var site = conf.develop_site;
 	var conf = require('./config/app.conf.json');
+	var site = conf.develop_site;
 	if ( env.NODE_ENV !== 'production' ) {
 		temp = template.match(/(\{=[^=}]+)/ig)[0].replace('{=','');
 		return template.replace( '{=' + temp + '=}' , site + temp );
