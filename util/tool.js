@@ -1,7 +1,6 @@
 var mian = {};
 var env = process.env;
 var conf = require('./../config/app.conf');
-var map = require('./../config/version/v'+ conf.produc_version );
 
 mian.normalize = function normalizeNumber (val) {
 	var port = parseInt(val, 10);
@@ -23,6 +22,7 @@ mian.tempPlace = function (template) {
 		temp = template.match(/(\{=[^=}]+)/ig)[0].replace('{=','');
 		return template.replace( '{=' + temp + '=}' , site + temp );
 	}else{
+		var map = require('./../config/version/v'+ conf.produc_version );
 		temp = template.match(/(\{=[^=}]+)/ig)[0].replace('{=','');
 		return template.replace( '{=' + temp + '=}' , map[temp] );
 	}
